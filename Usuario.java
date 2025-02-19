@@ -10,11 +10,19 @@ public class Usuario {
     private String cpf;
     private int cod_usuario;
     private int pendencias;
+<<<<<<< HEAD
     private String senha;
 
     
 
     Usuario(String nome, int autoridade, String cpf, int cod_usuario, int pendencias, String senha) {
+=======
+    private int senha;
+
+    
+
+    Usuario(String nome, int autoridade, String cpf, int cod_usuario, int pendencias, int senha) {
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         this.nome = nome;
         this.autoridade = autoridade;
         this.cpf = cpf;
@@ -37,8 +45,12 @@ public class Usuario {
         this.cpf = scanner.nextLine();
 
         System.out.print("Digite a senha: ");
+<<<<<<< HEAD
         this.senha = scanner.nextLine();
         this.senha = scanner.nextLine();
+=======
+        this.senha = scanner.nextInt();
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
 
         this.pendencias = 0;
 
@@ -98,6 +110,7 @@ public class Usuario {
         this.pendencias = pendencias;
     }
 
+<<<<<<< HEAD
     public String getSenha() {
         return senha;
     }
@@ -107,5 +120,15 @@ public class Usuario {
     }
 
 
+=======
+    public int getSenha() {
+        return senha;
+    }
+
+    public void setSenha(int senha) {
+        this.senha = senha;
+    }
+
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
 }
 

@@ -1,14 +1,21 @@
 package bibliotec;
 
+<<<<<<< HEAD
 
 import java.time.LocalDate;
+=======
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
 import java.util.Scanner;
 
 public class Livro {
     
     private int id_livro;
     private int disp;
+<<<<<<< HEAD
     private LocalDate datalancamento;
+=======
+    private String datalancamento;
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
     private String genero, titulo, faixaEtaria;
     private int paginas;
     private String autor;
@@ -16,7 +23,11 @@ public class Livro {
     LivroDao l = new LivroDao();
     Scanner s = new Scanner(System.in);
 
+<<<<<<< HEAD
     public Livro(int disponibilidade, String titulo, LocalDate ano_lançamento, String gênero, int paginas, String autor, int edição, String faixaet) {
+=======
+    public Livro(int disponibilidade, String titulo, String ano_lançamento, String gênero, int paginas, String autor, int edição, String faixaet) {
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         this.disp = disponibilidade;
         this.datalancamento = ano_lançamento;
         this.genero = gênero;
@@ -40,7 +51,11 @@ public class Livro {
         System.out.println("Informe a faixa etaria: ");
         faixaEtaria = s.nextLine();
         System.out.println("Informe a data de lançamento: ");
+<<<<<<< HEAD
         datalancamento = LocalDate.parse(s.nextLine()); 
+=======
+        datalancamento = s.nextLine();
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         System.out.println("quantos livros estão disponíveis?]");
         disp = s.nextInt();
         l.inserirlivro(this);
@@ -78,6 +93,7 @@ public class Livro {
         this.disp = disp;
     }
 
+<<<<<<< HEAD
     public LocalDate getDatalancamento() {
         return datalancamento;
     }
@@ -87,6 +103,17 @@ public class Livro {
     }
 
 
+=======
+    public String getDatalancamento() {
+        return datalancamento;
+    }
+
+    public void setDatalancamento(String datalancamento) {
+        this.datalancamento = datalancamento;
+    }
+    
+    
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
 
     public String getGenero() {
         return genero;

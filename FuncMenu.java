@@ -20,12 +20,17 @@ public class FuncMenu {
             scanner.nextLine();
             switch (opcao) {
                 case 1:
+<<<<<<< HEAD
                     adicionarUsuario();
+=======
+                    adicionarUsuario(listUsuarios);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                     break;
                 case 2:
                     loginUsuario(listUsuarios);
                     break;
                 case 3:
+<<<<<<< HEAD
                     adicionarLivro();
                     break;
                 case 4:
@@ -39,6 +44,21 @@ public class FuncMenu {
                     break;
                 case 7:
                     exibirHistorico();
+=======
+                    adicionarLivro(listLivros);
+                    break;
+                case 4:
+                    adicionarEmprestimo(listaEmprestimos);
+                    break;
+                case 5:
+                    devolverEmprestimo(listaEmprestimos);
+                    break;
+                case 6:
+                    exibirCatalogo(listLivros);
+                    break;
+                case 7:
+                    exibirHistorico(listaEmprestimos);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                     break;
                 case 8:
                     System.out.println("Saindo do sistema...");
@@ -58,12 +78,17 @@ public class FuncMenu {
             scanner.nextLine();
             switch (opcao) {
                 case 1:
+<<<<<<< HEAD
                     adicionarUsuario();
+=======
+                    adicionarUsuario(listUsuarios);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                     break;
                 case 2:
                     loginUsuario(listUsuarios);
                     break;
                 case 3:
+<<<<<<< HEAD
                     devolverEmprestimo();
                     break;
                 case 4:
@@ -71,6 +96,15 @@ public class FuncMenu {
                     break;
                 case 5:
                     exibirHistorico();
+=======
+                    devolverEmprestimo(listaEmprestimos);
+                    break;
+                case 4:
+                    exibirCatalogo(listLivros);
+                    break;
+                case 5:
+                    exibirHistorico(listaEmprestimos);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                     break;
                 case 6:
                     System.out.println("Saindo do sistema...");
@@ -90,9 +124,18 @@ public class FuncMenu {
 
             switch (opcao) {
                 case 1:
+<<<<<<< HEAD
                     exibirCatalogo();
                     break;
                 case 2:
+=======
+                    exibirCatalogo(listLivros);
+                    break;
+                case 2:
+                    //exibirHistorico(listaEmprestimos);
+                    break;
+                case 3:
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                     System.out.println("Saindo do sistema...");
                     break;
                 default:
@@ -101,16 +144,28 @@ public class FuncMenu {
         }
     }
 
+<<<<<<< HEAD
     public void adicionarLivro() {
         Livro livro = new Livro();
         
+=======
+    public void adicionarLivro(ArrayList<Livro> listLivros) {
+        Livro livro = new Livro();
+        listLivros.add(livro);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         ld.inserirlivro(livro);
         System.out.println("Livro adicionado com sucesso!");
     }
 
+<<<<<<< HEAD
     public void adicionarEmprestimo() {
         Emprestimo emprestimo = new Emprestimo();
         
+=======
+    public void adicionarEmprestimo(ArrayList<Emprestimo> listaEmprestimos) {
+        Emprestimo emprestimo = new Emprestimo();
+        listaEmprestimos.add(emprestimo);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         ed.inserirEmprestimo(emprestimo);
         System.out.println("Empréstimo registrado com sucesso!");
     }
@@ -125,8 +180,13 @@ public class FuncMenu {
                     System.out.println("cpf invalido");
                 } else {
                     System.out.println("qual é a sua senha");
+<<<<<<< HEAD
                     String s = scanner.nextLine();
                     if (u.getSenha().equals(s)) {
+=======
+                    int s = scanner.nextInt();
+                    if (u.getSenha() ==  s) {
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
                         System.out.println("Login bem-sucedido!");
                         return u; // Retorna o usuário logado  
                     } else {
@@ -139,12 +199,19 @@ public class FuncMenu {
         return null;
     }
 
+<<<<<<< HEAD
     public void adicionarUsuario() {
         Usuario usuario = new Usuario();
+=======
+    public void adicionarUsuario(ArrayList<Usuario> listUsuarios) {
+        Usuario usuario = new Usuario();
+        listUsuarios.add(usuario);
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         ud.inserirUsuario(usuario);
         System.out.println("Usuário adicionado com sucesso!");
     }
 
+<<<<<<< HEAD
     public void devolverEmprestimo() {
         System.out.println("Digite o código da transação:");
         int codTransacao = scanner.nextInt();
@@ -160,6 +227,36 @@ public class FuncMenu {
     public void exibirHistorico() {
 
     ed.consultar();
+=======
+    public void devolverEmprestimo(ArrayList<Emprestimo> listaEmprestimos) {
+        System.out.println("Digite o código da transação:");
+        int codTransacao = scanner.nextInt();
+        for (Emprestimo e : listaEmprestimos) {
+            if (codTransacao == e.getCod_transacao()) {
+                e.multa(scanner);
+                e.setDevolvido(true);
+                System.out.println("Devolução realizada com sucesso!");
+                return;
+            }
+        }
+    }
+
+    public void exibirCatalogo(ArrayList<Livro> listLivros) {
+
+        if (listLivros.isEmpty()) {
+            System.out.println("Nenhum livro cadastrado.");
+        } else {
+            for (Livro livro : listLivros) {
+                livro.exibirResumo();
+            }
+        }
+    }
+
+    public void exibirHistorico(ArrayList<Emprestimo> listaEmprestimos) {
+        for (Emprestimo emprestimo : listaEmprestimos) {
+            emprestimo.exibir();
+        }
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
 
     }
 

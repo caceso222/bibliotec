@@ -9,7 +9,11 @@ public class Menu{
     
         public static void exibirMenuCompleto() {
         System.out.println("1: Cadastro de usuário");
+<<<<<<< HEAD
         System.out.println("2: gerenciar conta");
+=======
+        System.out.println("2: Login de usuário");
+>>>>>>> 73ce2563e9390bb05febbb0a31d6839f8b0df567
         System.out.println("3: Cadastro de livro");
         System.out.println("4: Empréstimo de livro");
         System.out.println("5: Devolução");
